@@ -1,0 +1,641 @@
+body {
+  background-color: white;
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;  
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #202020;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 12.59px;  
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.homeheader {
+    height: 100vh;
+    background-image: url('download.webp'); /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.maintitle {
+    font-size: 4em;
+    margin: 0;
+    font-weight: 700;
+}
+
+.titleline {
+    width: 60%;
+    border: 1px solid #fff;
+    margin-top: 10px;
+}
+
+.container {
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    padding-bottom: 50px;
+}
+
+.intro,
+.content {
+    margin-bottom: 200px;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p {
+    font-size: 1.2em;
+    line-height: 1.6;
+}
+
+.featuredcontent {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+}
+
+.featuredcontent h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.featuredcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 200px;
+}
+
+.featuredpanel {
+    display: block;
+    width: 100%;
+    max-width: 32%;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featuredpanel:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.featuredimage {
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+}
+
+.featuredinfo {
+    padding: 20px;
+    text-align: left;
+}
+
+.featuredinfo h3 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.featuredinfo p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+@media screen and (max-width: 768px) {
+    .featuredpanel {
+        max-width: 48%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .featuredpanel {
+        max-width: 100%;
+    }
+}
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    z-index: 5;
+}
+
+.slide img {
+    width: 100%;
+    height: 800px;
+    object-fit: cover;
+    display: block;
+}
+
+.slide-text {
+    position: absolute;
+    bottom: 20px;
+    left: 30px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 40%;
+}
+
+.slide-text h2 {
+    margin: 0 0 10px 0;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #fff;
+    color: #000;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+/* Arrow buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+    margin-top: -20px; /* Center vertically */
+    color: white;
+    font-size: 30px;
+    background-color: rgba(0, 0, 0, 0.3); /* Translucent background */
+    border-radius: 50%;
+    display: flex;              /* Flexbox for centering */
+    justify-content: center;    /* Horizontal centering */
+    align-items: center;        /* Vertical centering */
+    user-select: none;
+    z-index: 10;                /* Ensure buttons are on top */
+    transition: 0.3s;
+}
+
+/* Position the "prev" button to the left */
+.prev {
+    left: 10px;
+}
+
+/* Position the "next" button to the right */
+.next {
+    right: 10px;
+}
+
+/* On hover, increase button opacity */
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Pause button */
+.pause-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.pause-btn:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Hide all slides by default */
+.slide {
+    display: none;
+}
+
+/* Show the first slide initially */
+.slide:first-child {
+    display: block;
+}
+
+.intro {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 70px;
+}
+
+.slideheader {
+    text-align: center;
+    font-size: 1.34em;
+    margin-bottom: 50px;
+}
+
+.slideshowcontent {
+    margin-bottom: 200px;
+}
+
+html, body {
+    scroll-behavior: smooth;
+}
+
+.site-footer {
+    background-color: #202020;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.site-footer .footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.site-footer p {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.site-footer .footer-links {
+    list-style: none;
+    margin: 10px 0 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.site-footer .footer-links li {
+    margin: 0 15px;
+}
+
+.site-footer .footer-links a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2em;
+}
+
+.site-footer .footer-links a:hover {
+    color: #007bff;
+}
+
+.footer-logo {
+    width: 100px;
+    height: auto;
+}
+
+.scrollableinfo {
+    margin-bottom: 200px;
+}
+
+.featuredpanel2 {
+    flex: 0 0 calc(100% / 5 - 20px); /* Adjust width to fit exactly 5 items on one row */
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featuredcontainer2 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 20px
+}
+
+.featuredpanel2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.solarsystemheader {
+    height: 100vh;
+    background-image: url('solarsystem.jpg'); /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.solar-system-embed {
+  max-width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.model h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 50px;
+}
+
+.model {
+    margin-bottom: 200px;
+}
+
+.sunheader {
+    height: 100vh;
+    background-image: url('thesun.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.content-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 20px 0;
+  margin-bottom: 200px;  
+
+}
+
+.video-container, .image-container {
+  flex: 1;
+  max-width: 45%;
+  margin-left: 20px;
+}
+
+.text-container {
+  flex: 1;
+  max-width: 55%;
+}
+
+.text-container h2 {
+  font-size: 1.8em;
+  margin-bottom: 10px;
+}
+
+.text-container p {
+  font-size: 1.2em;
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .content-section {
+    flex-direction: column; 
+  }
+
+  .video-container, .text-container {
+    max-width: 100%;
+    margin-right: 0;
+  }
+}
+
+.image-container img {
+  width: 85%; 
+  height: 300px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.mercuryheader {
+    height: 100vh;
+    background-image: url('mercury.webp'); /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.venusheader {
+    height: 100vh;
+    background-image: url('venus.webp'); /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.earthheader {
+    height: 100vh;
+    background-image: url('earth.jpg'); /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.marsheader {
+    height: 100vh;
+    background-image: url('mars.webp'); /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.jupiterheader {
+    height: 100vh;
+    background-image: url('jupiter.webp'); /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.saturnheader {
+    height: 100vh;
+    background-image: url('saturn.jpg'); /* Set your background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.uranusheader {
+    height: 100vh;
+    background-image: url('uranus.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.neptuneheader {
+    height: 100vh;
+    background-image: url('neptune.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.plutoheader {
+    height: 100vh;
+    background-image: url('pluto.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.theuniverseheader {
+    height: 100vh;
+    background-image: url('universe.jpg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+.featuredpanel3 {
+    flex: 0 0 calc(100% / 4 - 20px); /* Adjust width to fit exactly 5 items on one row */
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.featuredcontainer3 {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 20px;
+    width: 100%;
+    margin-bottom: 200px
+}
+
+.featuredpanel3:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
